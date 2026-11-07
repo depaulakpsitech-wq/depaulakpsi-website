@@ -16,7 +16,7 @@
       '<img src="images/chapter/life-new-members-2.jpg" alt="The Beta Gamma pledge class with the Tau Chi chapter">' +
       '<div class="congrats-body">' +
         '<p class="congrats-kicker">Welcome to the brotherhood</p>' +
-        '<h2 id="congrats-title">Congratulations, <span class="greek">ΒΓ</span> Beta Gamma!</h2>' +
+        '<h2 id="congrats-title">Congratulations, Beta Gamma!</h2>' +
         '<p>Congratulations to the Beta Gamma pledge class on completing the pledge process. The Tau Chi chapter is proud to call you brothers.</p>' +
         '<button class="btn btn-gold congrats-ok" type="button">Celebrate with us</button>' +
       '</div>' +
