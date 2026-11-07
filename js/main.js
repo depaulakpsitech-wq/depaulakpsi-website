@@ -124,7 +124,7 @@
       if (section) section.hidden = true;
     } else {
       const count = document.getElementById("roster-count");
-      if (count) count.textContent = list.length + " brothers";
+      if (count) count.textContent = list.length + " active brothers, grouped by pledge class";
       const card = (b) =>
         b.linkedin
           ? `<a class="brother" href="${encodeURI(b.linkedin)}" target="_blank" rel="noopener"><span>${esc(b.name)}</span><span class="in" aria-label="LinkedIn">in</span></a>`
