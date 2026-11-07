@@ -12,8 +12,9 @@
   --white: #ffffff;
   --line: #e6e1d3;
 
-  --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-display: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-body: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-greek: "Cormorant Garamond", Georgia, serif;   /* Poppins has no Greek letters, so ΑΚΨ uses this */
 
   --radius: 14px;
   --max: 1120px;
@@ -77,7 +78,7 @@ p  { margin: 0 0 1em; }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
 .brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; }
 .brand-letters {
-  font-family: var(--font-display);
+  font-family: var(--font-greek);
   font-size: 1.7rem; font-weight: 700; color: var(--gold); letter-spacing: .04em;
 }
 .brand-text { font-size: .8rem; line-height: 1.2; opacity: .9; }
@@ -123,7 +124,7 @@ p  { margin: 0 0 1em; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: .9rem; }
 .hero-mark {
   position: absolute; right: -2rem; bottom: -4rem;
-  font-family: var(--font-display); font-weight: 700;
+  font-family: var(--font-greek); font-weight: 700;
   font-size: clamp(10rem, 28vw, 22rem); line-height: 1;
   color: var(--gold); opacity: .08; pointer-events: none; user-select: none;
 }
@@ -373,7 +374,7 @@ html { scroll-padding-top: 80px; }
 }
 .intro-inner { text-align: center; }
 .intro-letters { display: flex; justify-content: center; gap: .08em;
-  font-family: var(--font-display); font-weight: 700; color: var(--gold);
+  font-family: var(--font-greek); font-weight: 700; color: var(--gold);
   font-size: clamp(5rem, 18vw, 11rem); line-height: 1; }
 .intro-letters span { display: inline-block; opacity: 0; transform: translateY(.18em); filter: blur(10px);
   animation: letterIn .5s cubic-bezier(.2,.7,.2,1) forwards; }
@@ -479,3 +480,19 @@ a.brother:hover { box-shadow: 0 12px 26px -18px rgba(11,37,69,.6); }
 /* Home headline on one line (wraps naturally on phones) */
 .hero:not(.page-hero) h1 { max-width: none; font-size: clamp(2.3rem, 5.4vw, 4.6rem); }
 @media (min-width: 761px) { .hero:not(.page-hero) h1 { white-space: nowrap; } }
+
+
+/* ---------- Poppins tuning ---------- */
+h1, h2, h3 { font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; }
+h1 { font-weight: 700; }
+.hero:not(.page-hero) h1 { font-size: clamp(2rem, 4.3vw, 3.7rem); letter-spacing: -0.03em; }
+.page-hero h1 { font-size: clamp(2.1rem, 4.6vw, 3.4rem); }
+h2 { font-size: clamp(1.7rem, 3.2vw, 2.35rem); }
+h3 { font-size: 1.15rem; }
+.member h3, .value h3 { font-size: 1.1rem; }
+.pull-quote blockquote { font-style: normal; font-weight: 500; font-size: clamp(1.2rem, 2.1vw, 1.55rem); letter-spacing: -0.01em; }
+.stat-item strong { font-weight: 600; letter-spacing: -0.02em; }
+.marquee.featured .marquee-set span { font-size: 1.2rem; font-weight: 600; letter-spacing: -0.01em; }
+.value .num, .event-date { font-weight: 600; }
+.member-initials { font-weight: 600; font-size: 2.6rem; }
+body { line-height: 1.7; }
