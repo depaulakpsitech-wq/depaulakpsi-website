@@ -42,17 +42,17 @@ window.SITE = {
      in "photo". If a photo is missing, the site shows initials instead. */
   // major / year / linkedin are optional — leave "" to hide them.
   execBoard: [
-    { name: "Jenny Patel",          role: "President",                    major: "", year: "", photo: "jenny-patel.jpg",          linkedin: "" },
-    { name: "Defne Celme",          role: "VP of Membership",             major: "", year: "", photo: "defne-celme.jpg",          linkedin: "" },
-    { name: "Divin Puthenpurakal",  role: "VP of Finance",                major: "", year: "", photo: "divin-puthenpurakal.jpg",  linkedin: "" },
-    { name: "Leo Martinez",         role: "VP of Corporate Relations",    major: "", year: "", photo: "leo-martinez.jpg",         linkedin: "" },
-    { name: "Prachi Joshi",         role: "VP of Marketing",              major: "", year: "", photo: "prachi-joshi.jpg",         linkedin: "" },
-    { name: "Arafa Shareef",        role: "VP of Alumni Relations",       major: "", year: "", photo: "arafa-shareef.jpg",        linkedin: "" },
-    { name: "Tibin Thomas",         role: "VP of Brotherhood",            major: "", year: "", photo: "tibin-thomas.jpg",         linkedin: "" },
-    { name: "Megan Hulak",          role: "Secretary",                    major: "", year: "", photo: "megan-hulak.jpg",          linkedin: "" },
-    { name: "Maya Widyna",          role: "Master of Rituals",            major: "", year: "", photo: "maya-widyna.jpg",          linkedin: "" },
-    { name: "Lucy Cohen",           role: "Pledge Instructor",            major: "", year: "", photo: "lucy-cohen.jpg",           linkedin: "" },
-    { name: "Zuzanna Lasota",       role: "VP of Professionalism",        major: "", year: "", photo: "zuzanna-lasota.jpg",       linkedin: "" },
+    { name: "Jenny Patel",          role: "President",                    major: "", year: "", photo: "jenny-patel.jpg",          linkedin: "https://www.linkedin.com/in/itsjennypatel/" },
+    { name: "Defne Celme",          role: "VP of Membership",             major: "", year: "", photo: "defne-celme.jpg",          linkedin: "https://www.linkedin.com/in/defnecelme/" },
+    { name: "Divin Puthenpurakal",  role: "VP of Finance",                major: "", year: "", photo: "divin-puthenpurakal.jpg",  linkedin: "https://www.linkedin.com/in/dputhenpurakal/" },
+    { name: "Leo Martinez",         role: "VP of Corporate Relations",    major: "", year: "", photo: "leo-martinez.jpg",         linkedin: "https://www.linkedin.com/in/martleonardo/" },
+    { name: "Prachi Joshi",         role: "VP of Marketing",              major: "", year: "", photo: "prachi-joshi.jpg",         linkedin: "https://www.linkedin.com/in/prachijoshi1/" },
+    { name: "Arafa Shareef",        role: "VP of Alumni Relations",       major: "", year: "", photo: "arafa-shareef.jpg",        linkedin: "https://www.linkedin.com/in/arafashareef/" },
+    { name: "Tibin Thomas",         role: "VP of Brotherhood",            major: "", year: "", photo: "tibin-thomas.jpg",         linkedin: "https://www.linkedin.com/in/tibin-thomas11/" },
+    { name: "Megan Hulak",          role: "Secretary",                    major: "", year: "", photo: "megan-hulak.jpg",          linkedin: "https://www.linkedin.com/in/meganhulak/" },
+    { name: "Maya Widyna",          role: "Master of Rituals",            major: "", year: "", photo: "maya-widyna.jpg",          linkedin: "https://www.linkedin.com/in/mayawidyna/" },
+    { name: "Lucy Cohen",           role: "Pledge Instructor",            major: "", year: "", photo: "lucy-cohen.jpg",           linkedin: "https://www.linkedin.com/in/lucycohen7/" },
+    { name: "Zuzanna Lasota",       role: "VP of Professionalism",        major: "", year: "", photo: "zuzanna-lasota.jpg",       linkedin: "https://www.linkedin.com/in/zuzanna-lasota1/" },
   ],
 
   /* ---------- All brothers (shown below the e-board, grouped by pledge class) ----------
