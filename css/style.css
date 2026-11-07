@@ -395,15 +395,15 @@ html { scroll-padding-top: 80px; }
 @media (prefers-reduced-motion: reduce) { .intro { display: none; } }
 
 /* Hero content eases in as the intro clears */
-.intro ~ .hero .container > * { opacity: 0; transform: translateY(14px); animation: heroIn .55s ease forwards; }
-.intro ~ .hero .container > :nth-child(1) { animation-delay: 1.25s; }
-.intro ~ .hero .container > :nth-child(2) { animation-delay: 1.32s; }
-.intro ~ .hero .container > :nth-child(3) { animation-delay: 1.39s; }
-.intro ~ .hero .container > :nth-child(4) { animation-delay: 1.46s; }
-.intro-seen .intro ~ .hero .container > *,
+.intro ~ .hero-frame .hero .container > * { opacity: 0; transform: translateY(14px); animation: heroIn .55s ease forwards; }
+.intro ~ .hero-frame .hero .container > :nth-child(1) { animation-delay: 1.25s; }
+.intro ~ .hero-frame .hero .container > :nth-child(2) { animation-delay: 1.32s; }
+.intro ~ .hero-frame .hero .container > :nth-child(3) { animation-delay: 1.39s; }
+.intro ~ .hero-frame .hero .container > :nth-child(4) { animation-delay: 1.46s; }
+.intro-seen .intro ~ .hero-frame .hero .container > *,
 .intro.intro-done ~ .hero .container > * { animation: none; opacity: 1; transform: none; }
 @keyframes heroIn { to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) { .intro ~ .hero .container > * { animation: none; opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .intro ~ .hero-frame .hero .container > * { animation: none; opacity: 1; transform: none; } }
 
 /* ---------- Brotherhood photo strip (scrolling gallery) ---------- */
 .gallery-section { padding-bottom: clamp(4rem, 9vw, 6.5rem); overflow: hidden; }
@@ -496,3 +496,82 @@ h3 { font-size: 1.15rem; }
 .value .num, .event-date { font-weight: 600; }
 .member-initials { font-weight: 600; font-size: 2.6rem; }
 body { line-height: 1.7; }
+
+
+/* ================= Home hero: framed card (reference layout) ================= */
+.hero-frame {
+  /* navy band behind the card that turns cream partway down */
+  background: linear-gradient(to bottom, var(--navy) 0, var(--navy) 72%, var(--paper) 72%);
+  padding: clamp(14px, 2.2vw, 28px) clamp(12px, 3vw, 40px) 0;
+}
+.hero.hero-card {
+  max-width: 1240px; margin: 0 auto; border-radius: 22px; overflow: hidden;
+  min-height: clamp(520px, 82vh, 760px);
+  display: flex; align-items: flex-end; text-align: center;
+  padding: 0 0 clamp(2.6rem, 6vw, 4.2rem);
+  background:
+    linear-gradient(to bottom, rgba(11,37,69,.10) 0%, rgba(11,37,69,.18) 38%, rgba(7,26,51,.78) 68%, rgba(7,26,51,.97) 100%),
+    url("../images/chapter/hero.jpg") center 22% / cover no-repeat,
+    var(--navy);
+  box-shadow: 0 40px 80px -40px rgba(7,26,51,.65);
+}
+.hero.hero-card .container { display: flex; flex-direction: column; align-items: center; }
+.hero.hero-card .eyebrow { color: var(--gold); margin-bottom: 1rem; text-shadow: 0 1px 12px rgba(0,0,0,.35); }
+.hero.hero-card h1 { margin-inline: auto; text-shadow: 0 2px 24px rgba(0,0,0,.35); }
+.hero.hero-card .lead { margin: 0 auto 1.9rem; max-width: 52ch; text-shadow: 0 1px 14px rgba(0,0,0,.4); }
+.hero.hero-card .hero-actions { justify-content: center; }
+
+/* Gold button with a soft metallic gradient, squarer corners like the reference */
+.hero.hero-card .btn { border-radius: 8px; padding: .95rem 1.9rem; }
+.hero.hero-card .btn-gold {
+  background: linear-gradient(135deg, #e3c164 0%, #c9a227 55%, #b48c1b 100%);
+  color: var(--navy-deep); box-shadow: 0 10px 24px -10px rgba(201,162,39,.7);
+}
+.hero.hero-card .btn-gold:hover { filter: brightness(1.06); }
+.btn-ghost { color: var(--white); border: 1.5px solid rgba(255,255,255,.55); background: rgba(255,255,255,.06); backdrop-filter: blur(4px); }
+.btn-ghost:hover { background: var(--white); color: var(--navy); }
+
+/* Stats sit on the cream below the card */
+.hero-frame + .stats-band { background: var(--paper); color: var(--navy); border-bottom: 1px solid var(--line); }
+.hero-frame + .stats-band .stat-item strong { color: var(--navy); }
+.hero-frame + .stats-band .stat-item span { color: var(--muted); }
+.hero-frame + .stats-band .stat-item + .stat-item { border-left-color: var(--line); }
+@media (max-width: 760px) { .hero-frame + .stats-band .stat-item:nth-child(n+3) { border-top-color: var(--line); } }
+
+@media (max-width: 600px) {
+  .hero.hero-card { border-radius: 16px; min-height: 560px; background-position: center, 40% 20%, center; }
+  .hero.hero-card .btn { width: 100%; text-align: center; }
+  .hero.hero-card .hero-actions { width: 100%; flex-direction: column; }
+}
+
+/* Hero card readability tweaks */
+.hero.hero-card {
+  background:
+    linear-gradient(to bottom, rgba(11,37,69,.06) 0%, rgba(11,37,69,.12) 30%, rgba(7,26,51,.72) 50%, rgba(7,26,51,.94) 68%, rgba(7,26,51,.98) 100%),
+    url("../images/chapter/hero.jpg") center 12% / cover no-repeat,
+    var(--navy);
+}
+@media (max-width: 600px) {
+  .hero.hero-card {
+    min-height: 700px;
+    background:
+      linear-gradient(to bottom, rgba(11,37,69,.05) 0%, rgba(11,37,69,.1) 26%, rgba(7,26,51,.85) 44%, rgba(7,26,51,.98) 60%),
+      url("../images/chapter/hero.jpg") 42% 0 / auto 52% no-repeat,
+      var(--navy-deep);
+  }
+  .hero.hero-card .eyebrow { font-size: .68rem; letter-spacing: .14em; line-height: 1.6; }
+  .hero.hero-card .lead { font-size: 1rem; }
+}
+@media (min-width: 601px) {
+  .hero.hero-card {
+    min-height: clamp(580px, 92vh, 860px);
+    padding-bottom: clamp(2.2rem, 4.5vw, 3.2rem);
+    background:
+      linear-gradient(to bottom, rgba(11,37,69,.04) 0%, rgba(11,37,69,.10) 42%, rgba(7,26,51,.78) 56%, rgba(7,26,51,.96) 68%, rgba(7,26,51,.98) 100%),
+      url("../images/chapter/hero.jpg") center 8% / cover no-repeat,
+      var(--navy);
+  }
+  .hero.hero-card .eyebrow { margin-bottom: .7rem; }
+  .hero.hero-card h1 { margin-bottom: .35em; }
+  .hero.hero-card .lead { max-width: 64ch; margin-bottom: 1.6rem; }
+}
