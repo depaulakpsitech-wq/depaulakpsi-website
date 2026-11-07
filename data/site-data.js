@@ -45,7 +45,6 @@ window.SITE = {
     { name: "Jenny Patel",          role: "President",                    major: "", year: "", photo: "jenny-patel.jpg",          linkedin: "" },
     { name: "Defne Celme",          role: "VP of Membership",             major: "", year: "", photo: "defne-celme.jpg",          linkedin: "" },
     { name: "Divin Puthenpurakal",  role: "VP of Finance",                major: "", year: "", photo: "divin-puthenpurakal.jpg",  linkedin: "" },
-    { name: "Zuzanna Lasota",       role: "VP of Professionalism",        major: "", year: "", photo: "zuzanna-lasota.jpg",       linkedin: "" },
     { name: "Leo Martinez",         role: "VP of Corporate Relations",    major: "", year: "", photo: "leo-martinez.jpg",         linkedin: "" },
     { name: "Prachi Joshi",         role: "VP of Marketing",              major: "", year: "", photo: "prachi-joshi.jpg",         linkedin: "" },
     { name: "Arafa Shareef",        role: "VP of Alumni Relations",       major: "", year: "", photo: "arafa-shareef.jpg",        linkedin: "" },
@@ -53,6 +52,7 @@ window.SITE = {
     { name: "Megan Hulak",          role: "Secretary",                    major: "", year: "", photo: "megan-hulak.jpg",          linkedin: "" },
     { name: "Maya Widyna",          role: "Master of Rituals",            major: "", year: "", photo: "maya-widyna.jpg",          linkedin: "" },
     { name: "Lucy Cohen",           role: "Pledge Instructor",            major: "", year: "", photo: "lucy-cohen.jpg",           linkedin: "" },
+    { name: "Zuzanna Lasota",       role: "VP of Professionalism",        major: "", year: "", photo: "zuzanna-lasota.jpg",       linkedin: "" },
   ],
 
   /* ---------- All brothers (shown below the e-board, grouped by pledge class) ----------
