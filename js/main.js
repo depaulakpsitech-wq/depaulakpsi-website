@@ -99,7 +99,7 @@
           .toUpperCase();
         const meta = [m.major, m.year].filter(Boolean).join(" · ");
         return `
-        <article class="member">
+        <article class="member${m.linkedin ? " has-link" : ""}">
           <div class="member-photo">
             <span class="member-initials">${esc(initials)}</span>
             ${m.photo ? `<img src="images/headshots/${encodeURI(m.photo)}" alt="${esc(m.name)}, ${esc(m.role)}" loading="lazy" onerror="this.remove()">` : ""}
@@ -108,7 +108,7 @@
             <div class="member-role">${esc(m.role)}</div>
             <h3>${esc(m.name)}</h3>
             <p class="member-meta">${esc(meta)}</p>
-            ${m.linkedin ? `<a class="member-link" href="${encodeURI(m.linkedin)}" target="_blank" rel="noopener">LinkedIn →</a>` : ""}
+            ${m.linkedin ? `<a class="member-link" href="${encodeURI(m.linkedin)}" target="_blank" rel="noopener" aria-label="${esc(m.name)} on LinkedIn">LinkedIn →</a>` : ""}
           </div>
         </article>`;
       })
