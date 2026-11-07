@@ -475,3 +475,7 @@ a.brother:hover { box-shadow: 0 12px 26px -18px rgba(11,37,69,.6); }
   .card:hover, .value:hover, .life-grid figure:hover, .member:hover { transform: none; }
   .member:hover .member-photo img, .life-grid figure:hover img { transform: none; }
 }
+
+/* Home headline on one line (wraps naturally on phones) */
+.hero:not(.page-hero) h1 { max-width: none; font-size: clamp(2.3rem, 5.4vw, 4.6rem); }
+@media (min-width: 761px) { .hero:not(.page-hero) h1 { white-space: nowrap; } }
