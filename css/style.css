@@ -624,3 +624,8 @@ body { line-height: 1.7; }
   .hero.hero-card::before { height: auto; background-size: 100% auto; background-position: center top; }
   .hero.hero-card .container { margin-top: .4rem; }
 }
+
+/* Chapter life: two photos side by side, the new-members group photo full width below */
+@media (min-width: 861px) { .life-grid { grid-template-columns: repeat(2, 1fr); } }
+.life-grid figure.wide { grid-column: 1 / -1; }
+.life-grid figure.wide img { aspect-ratio: 1800 / 709; }
