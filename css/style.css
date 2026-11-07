@@ -651,3 +651,8 @@ body { line-height: 1.7; }
 .congrats-close:hover, .congrats-close:focus-visible { background: var(--gold); color: var(--navy-deep); }
 @media (prefers-reduced-motion: reduce) { .congrats, .congrats-card { transition: none; } }
 .congrats button { font-family: var(--font-body); }
+/* E-board: whole card opens LinkedIn */
+.member { position: relative; }
+.member.has-link { cursor: pointer; }
+.member.has-link .member-link::after { content: ""; position: absolute; inset: 0; z-index: 2; }
+.member.has-link:hover .member-link { color: var(--gold); }
