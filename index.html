@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=6">
   <script>
     /* Intro plays once per browser session. */
     try { if (sessionStorage.getItem("introSeen")) document.documentElement.classList.add("intro-seen"); } catch (e) {}
@@ -61,18 +61,19 @@
   </header>
 
   <!-- ===== 1. HERO ===== -->
-  <section class="hero">
+  <div class="hero-frame">
+  <section class="hero hero-card">
     <div class="container">
       <span class="eyebrow">Alpha Kappa Psi · Tau Chi Chapter · DePaul University</span>
       <h1>Shaping people. Shaping business.</h1>
       <p class="lead">A community at DePaul where students build professional skills, form lasting connections, and put principled leadership into practice.</p>
       <div class="hero-actions">
         <a class="btn btn-gold" data-linktree>Explore Recruitment</a>
-        <a class="btn btn-outline" data-instagram target="_blank" rel="noopener">Follow Tau Chi</a>
+        <a class="btn btn-ghost" data-instagram target="_blank" rel="noopener">Follow Tau Chi</a>
       </div>
     </div>
-    <div class="hero-mark" aria-hidden="true">ΑΚΨ</div>
   </section>
+  </div>
 
   <!-- ===== STATS (numbers count up; computed from data/site-data.js) ===== -->
   <section class="stats-band" aria-label="Chapter at a glance">
