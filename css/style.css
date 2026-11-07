@@ -612,7 +612,7 @@ body { line-height: 1.7; }
 .hero.hero-card { display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; min-height: 0; }
 .hero.hero-card::before {
   position: relative; inset: auto; flex: none; width: 100%; height: auto;
-  aspect-ratio: 2000 / 757;
+  aspect-ratio: 2000 / 671;
   background-size: 100% auto; background-position: center top;
   -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 80%, transparent 100%);
           mask-image: linear-gradient(180deg, #000 0%, #000 80%, transparent 100%);
