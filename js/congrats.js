@@ -26,7 +26,7 @@
   const canvas = wrap.querySelector("canvas");
   const ctx = canvas.getContext("2d");
   const reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const colors = ["#c9a227", "#e6c65a", "#f3e7bf", "#0b2545", "#ffffff", "#1d4e89"];
+  const colors = ["#c9a227", "#e6c65a", "#f6efdd", "#fbf8f1", "#c9a227", "#1d3f6e"];
   let pieces = [], raf = null, lastFocus = null;
 
   function size() {
