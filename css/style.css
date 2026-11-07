@@ -612,10 +612,10 @@ body { line-height: 1.7; }
 .hero.hero-card { display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; min-height: 0; }
 .hero.hero-card::before {
   position: relative; inset: auto; flex: none; width: 100%; height: auto;
-  aspect-ratio: 2000 / 1052;
+  aspect-ratio: 2000 / 757;
   background-size: 100% auto; background-position: center top;
-  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 84%, transparent 100%);
-          mask-image: linear-gradient(180deg, #000 0%, #000 84%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 80%, transparent 100%);
+          mask-image: linear-gradient(180deg, #000 0%, #000 80%, transparent 100%);
 }
 .hero.hero-card::after { background: linear-gradient(180deg, rgba(7,26,51,.18) 0%, rgba(7,26,51,0) 18%); }
 .hero.hero-card .container { position: relative; margin-top: clamp(-3.2rem, -4vw, -1rem); }
