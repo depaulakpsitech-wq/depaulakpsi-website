@@ -17,7 +17,7 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="The Tau Chi Chapter of Alpha Kappa Psi at DePaul University">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#0b2545">
+  <meta name="theme-color" content="#061529">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32.png">
   <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
@@ -25,8 +25,8 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Alpha Kappa Psi – Tau Chi Chapter at DePaul University", "alternateName": ["AKPsi DePaul", "Alpha Kappa Psi DePaul", "Tau Chi Chapter", "AKΨ DePaul"], "url": "https://depaulakpsi.org/", "logo": "https://depaulakpsi.org/images/icons/icon-512.png", "image": "https://depaulakpsi.org/images/og-image.jpg", "description": "The Tau Chi Chapter of Alpha Kappa Psi, a professional business fraternity at DePaul University in Chicago.", "address": {"@type": "PostalAddress", "addressLocality": "Chicago", "addressRegion": "IL", "addressCountry": "US"}, "parentOrganization": {"@type": "Organization", "name": "Alpha Kappa Psi", "url": "https://akpsi.org"}, "sameAs": ["https://www.instagram.com/akpsi.depaul/", "https://www.linkedin.com/in/akpsidepaul/"]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=16">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=17">
   <script>
     /* Intro plays once per browser session. */
     try { if (sessionStorage.getItem("introSeen")) document.documentElement.classList.add("intro-seen"); } catch (e) {}
@@ -42,192 +42,144 @@
       <div class="intro-sub">Tau Chi Chapter · DePaul University</div>
     </div>
   </div>
-
-  <!-- ===== HEADER (same on every page) ===== -->
   <header class="site-header">
-    <nav class="nav container" aria-label="Main">
-      <a class="brand" href="index.html">
-        <span class="brand-letters">ΑΚΨ</span>
-        <span class="brand-text">Alpha Kappa Psi <span class="brand-sep">|</span> Tau Chi</span>
-      </a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav wrap" aria-label="Main">
+      <a class="brand" href="index.html"><span class="brand-letters">ΑΚΨ</span><span class="brand-text">Tau Chi · DePaul</span></a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="brothers.html">Brotherhood</a></li>
         <li><a href="recruitment.html">Recruitment</a></li>
-        <li><a class="btn btn-gold" href="#contact">Contact</a></li>
+        <li><a class="btn-line" href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- ===== 1. HERO ===== -->
-  <div class="hero-frame">
-  <section class="hero hero-card">
-    <div class="container">
-      <span class="eyebrow">Alpha Kappa Psi · Tau Chi Chapter · DePaul University</span>
-      <h1>Shaping people. Shaping business.</h1>
-      <p class="lead">A community at DePaul where students build professional skills, form lasting connections, and put principled leadership into practice.</p>
-      <div class="hero-actions">
-        <a class="btn btn-gold" data-linktree>Explore Recruitment</a>
-        <a class="btn btn-ghost" data-instagram target="_blank" rel="noopener">Follow Tau Chi</a>
+  <section class="hero hero-home">
+    <div class="hero-mark" aria-hidden="true">Ψ</div>
+    <div class="wrap">
+      <div class="hero-top">
+        <span class="label"><span class="dot"></span>Alpha Kappa Psi · Tau Chi Chapter</span>
+        <span class="label">DePaul University · Chicago</span>
+      </div>
+      <h1>
+        <span class="row">Shaping</span>
+        <span class="row">people<em>&amp; shaping</em></span>
+        <span class="row">business<span class="red-dot"></span></span>
+      </h1>
+      <div class="hero-foot">
+        <p class="lead">A community at DePaul where students build professional skills, form lasting connections, and put principled leadership into practice.</p>
+        <div class="actions">
+          <a class="btn-line" data-linktree>Explore recruitment</a>
+          <a class="cta-link" data-instagram target="_blank" rel="noopener">Follow Tau Chi</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-media"><img src="images/chapter/hero.jpg?v=2" alt="The Tau Chi Chapter of Alpha Kappa Psi with its newest pledge class"></div>
+  </section>
+
+  <section aria-label="Chapter at a glance">
+    <div class="wrap">
+      <div class="stats-row">
+        <div class="stat-item"><strong data-count="brothers">0</strong><span>Active brothers</span></div>
+        <div class="stat-item"><strong data-count="classes">0</strong><span>Active pledge classes</span></div>
+        <div class="stat-item"><strong data-count="companies" data-suffix="+">0</strong><span>Companies where brothers have worked</span></div>
+        <div class="stat-item"><strong data-count="founded" data-static="1904">1904</strong><span>Alpha Kappa Psi founded</span></div>
       </div>
     </div>
   </section>
-  </div>
 
-  <!-- ===== STATS (numbers count up; computed from data/site-data.js) ===== -->
-  <section class="stats-band" aria-label="Chapter at a glance">
-    <div class="container stats-row">
-      <div class="stat-item"><strong data-count="brothers">0</strong><span>Active brothers</span></div>
-      <div class="stat-item"><strong data-count="classes">0</strong><span>Active pledge classes</span></div>
-      <div class="stat-item"><strong data-count="companies" data-suffix="+">0</strong><span>Companies where brothers have worked</span></div>
-      <div class="stat-item"><strong data-count="founded" data-static="1904">1904</strong><span>Alpha Kappa Psi founded</span></div>
-    </div>
-  </section>
-
-  <!-- ===== 2. ABOUT THE CHAPTER ===== -->
-  <section id="about">
-    <div class="container split">
-      <div>
-        <span class="eyebrow">About the chapter</span>
-        <h2>Professional growth, built through community</h2>
-        <p>Alpha Kappa Psi is a professional business fraternity. At DePaul, the Tau Chi Chapter brings students together to learn, lead, serve, and build relationships that extend beyond college.</p>
-        <p>Through professional development, chapter events, community engagement, and connection with alumni, members learn from one another and grow as principled leaders. Tau Chi is based at DePaul University in Chicago.</p>
+  <section id="about" class="linen">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <span class="label">01 — About the chapter</span>
+          <h2>Professional growth <em>built through</em> community</h2>
+          <p>Alpha Kappa Psi is a professional business fraternity. At DePaul, the Tau Chi Chapter brings students together to learn, lead, serve, and build relationships that extend beyond college.</p>
+          <p>Through professional development, chapter events, community engagement, and connection with alumni, members learn from one another and grow as principled leaders.</p>
+        </div>
+        <div class="photo-frame"><img src="images/chapter/about.jpg" alt="The Tau Chi Chapter of Alpha Kappa Psi" onerror="this.remove()"></div>
       </div>
-      <div class="photo-frame wide">
-        <img src="images/chapter/about.jpg" alt="The Tau Chi Chapter of Alpha Kappa Psi" onerror="this.remove()">
-      </div>
-    </div>
-    <div class="container">
       <figure class="pull-quote">
+        <figcaption>Alpha Kappa Psi mission</figcaption>
         <blockquote>“To develop a diverse global community of courageous, principled business leaders with the capability to drive positive impact throughout their lifelong journey.”</blockquote>
-        <figcaption>Alpha Kappa Psi mission statement</figcaption>
       </figure>
     </div>
   </section>
 
-  <!-- ===== 3. WHAT MEMBERS EXPERIENCE ===== -->
-  <section id="experience" class="section-alt">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">What members experience</span>
-        <h2>Learn by doing</h2>
-      </div>
-      <div class="cards four">
-        <div class="card">
-          <h3>Professional development</h3>
-          <p>Build communication, leadership, and professional skills through chapter programming and conversations with people working across industries.</p>
-        </div>
-        <div class="card">
-          <h3>Industry exposure</h3>
-          <p>Learn about different career paths through professional events and company visits. Tau Chi has shared chapter activities including visits to firms such as BMO, RSM, and Plante Moran.</p>
-        </div>
-        <div class="card">
-          <h3>A connected community</h3>
-          <p>Get to know fellow DePaul students, alumni, and professionals through chapter events and networking opportunities.</p>
-        </div>
-        <div class="card">
-          <h3>Service and leadership</h3>
-          <p>Take part in a community that values service, responsibility, and leadership.</p>
-        </div>
+  <section id="experience">
+    <div class="wrap">
+      <div class="sec-head section-head"><span class="label">02 — What members experience</span><h2>Learn <em>by</em> doing</h2></div>
+      <div class="cards">
+        <div class="card featured"><span class="num">i.</span><h3>Professional development</h3><p>Build communication, leadership, and professional skills through chapter programming and conversations with people working across industries.</p></div>
+        <div class="card"><span class="num">ii.</span><h3>Industry exposure</h3><p>Learn about different career paths through professional events and company visits, including firms such as BMO, RSM, and Plante Moran.</p></div>
+        <div class="card"><span class="num">iii.</span><h3>A connected community</h3><p>Get to know fellow DePaul students, alumni, and professionals through chapter events and networking opportunities.</p></div>
+        <div class="card"><span class="num">iv.</span><h3>Service &amp; leadership</h3><p>Take part in a community that values service, responsibility, and leadership.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ===== 4. CORE VALUES ===== -->
-  <section id="values" class="section-navy">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Core values</span>
-        <h2>The values behind our letters</h2>
-      </div>
+  <section id="values" class="rule">
+    <div class="wrap">
+      <div class="sec-head section-head"><span class="label">03 — Core values</span><h2>The values <em>behind</em> our letters</h2></div>
       <div class="values">
-        <div class="value"><span class="num">01</span><h3>Brotherhood</h3><p>We build relationships grounded in trust, respect, cooperation, and support.</p></div>
-        <div class="value"><span class="num">02</span><h3>Knowledge</h3><p>We share what we learn and keep growing through education and experience.</p></div>
-        <div class="value"><span class="num">03</span><h3>Integrity</h3><p>We act with honesty, fairness, and good judgment.</p></div>
-        <div class="value"><span class="num">04</span><h3>Service</h3><p>We contribute our time and abilities to our fraternity and our communities.</p></div>
-        <div class="value"><span class="num">05</span><h3>Unity</h3><p>We work toward a shared purpose across chapter, generation, and profession.</p></div>
+        <div class="value"><span class="num">01</span><h3>Brother<em>hood</em></h3><p>We build relationships grounded in trust, respect, cooperation, and support.</p></div>
+        <div class="value"><span class="num">02</span><h3>Know<em>ledge</em></h3><p>We share what we learn and keep growing through education and experience.</p></div>
+        <div class="value"><span class="num">03</span><h3>Integ<em>rity</em></h3><p>We act with honesty, fairness, and good judgment.</p></div>
+        <div class="value"><span class="num">04</span><h3>Ser<em>vice</em></h3><p>We contribute our time and abilities to our fraternity and our communities.</p></div>
+        <div class="value"><span class="num">05</span><h3>Uni<em>ty</em></h3><p>We work toward a shared purpose across chapter, generation, and profession.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ===== 5. CHAPTER LIFE ===== -->
-  <section id="chapter-life">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Chapter life</span>
-        <h2>Grow together at DePaul</h2>
-        <p>Tau Chi brings together professional development and the relationships that make a chapter feel like a community. From learning about career paths to recognizing academic achievements and welcoming new members, chapter life is shaped by the people who take part in it.</p>
-      </div>
-      <!-- To add the "Celebrating academic achievement" photo, copy one <figure> and point it at the new image. -->
+  <section id="chapter-life" class="rule">
+    <div class="wrap">
+      <div class="sec-head section-head"><span class="label">04 — Chapter life</span><h2>Grow <em>together</em> at DePaul</h2><p>From learning about career paths to welcoming new members, chapter life is shaped by the people who take part in it.</p></div>
       <div class="life-grid">
-        <figure>
-          <img src="images/events/chicago-fire-1.jpg" alt="Tau Chi members at the Chicago Fire FC offices" loading="lazy">
-          <figcaption>Learning from professionals in Chicago</figcaption>
-        </figure>
-        <figure>
-          <img src="images/chapter/life-alumni.jpg" alt="Members and alumni at the Tau Chi alumni mixer" loading="lazy">
-          <figcaption>Connecting with Tau Chi alumni</figcaption>
-        </figure>
-        <figure class="wide">
-          <img src="images/chapter/life-new-members-2.jpg" alt="The Tau Chi chapter with its newest pledge class" loading="lazy">
-          <figcaption>Welcoming new members into the chapter</figcaption>
-        </figure>
+        <figure><img src="images/events/chicago-fire-1.jpg" alt="Tau Chi members at the Chicago Fire FC offices" loading="lazy"><figcaption>Learning from professionals in Chicago</figcaption></figure>
+        <figure><img src="images/chapter/life-alumni.jpg" alt="Members and alumni at the Tau Chi alumni mixer" loading="lazy"><figcaption>Connecting with Tau Chi alumni</figcaption></figure>
+        <figure class="wide"><img src="images/chapter/life-new-members-2.jpg" alt="The Tau Chi chapter with its newest pledge class" loading="lazy"><figcaption>Welcoming new members into the chapter</figcaption></figure>
       </div>
-      <p class="life-more"><a href="events.html">See more chapter events →</a></p>
+      <p class="life-more"><a class="cta-link" href="events.html">See more chapter events</a></p>
     </div>
   </section>
 
-  <!-- ===== WHERE OUR BROTHERS HAVE WORKED (list lives in data/site-data.js) ===== -->
-  <section id="placements-section" class="section-alt">
-    <div class="container">
-      <div class="section-head" style="text-align:center;margin-inline:auto">
-        <span class="eyebrow">Career outcomes</span>
-        <h2>Where our brothers have interned and worked</h2>
-        <p>Tau Chi members have gained experience at firms across finance, accounting, consulting, healthcare, media and more.</p>
-      </div>
-      <div id="placements"></div>
+  <section id="placements-section" class="rule">
+    <div class="wrap">
+      <div class="sec-head section-head"><span class="label">05 — Career outcomes</span><h2>Where we've <em>interned &amp;</em> worked</h2><p>Tau Chi members have gained experience at firms across finance, accounting, consulting, healthcare, media and more.</p></div>
     </div>
+    <div id="placements"></div>
   </section>
 
-  <!-- ===== 6. RECRUITMENT CALL TO ACTION ===== -->
   <section class="cta" id="recruit">
-    <div class="container">
-      <span class="eyebrow">Recruitment · <span data-semester></span></span>
-      <h2>Curious about Tau Chi?</h2>
-      <p>Meet the chapter, learn what membership involves, and see whether Alpha Kappa Psi is a fit for you. Recruitment details and current interest forms are shared through Tau Chi’s official links.</p>
-      <a class="btn btn-gold" data-linktree>View Recruitment Information</a>
-      <p class="fine-print">Recruitment dates and event details may change. Check our <a data-instagram target="_blank" rel="noopener">Instagram, @akpsi.depaul</a>, for the latest information.</p>
+    <div class="wrap">
+      <div class="cta-box">
+        <span class="label"><span class="dot"></span>Recruitment · <span data-semester></span></span>
+        <h2>Curious<em>about</em><br>Tau Chi?</h2>
+        <p>Meet the chapter, learn what membership involves, and see whether Alpha Kappa Psi is a fit for you.</p>
+        <div class="actions">
+          <a class="btn-line btn-solid" data-linktree>View recruitment info</a>
+          <a class="cta-link" data-instagram target="_blank" rel="noopener">@akpsi.depaul</a>
+        </div>
+        <p class="fine-print">Dates and event details may change. Check our Instagram for the latest information.</p>
+      </div>
     </div>
   </section>
 
-  <!-- ===== 7. FAQ ===== -->
-  <section id="faq" class="section-alt">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">FAQ</span>
-        <h2>Questions, answered</h2>
-      </div>
+  <section id="faq" class="rule">
+    <div class="wrap">
+      <div class="sec-head section-head"><span class="label">06 — FAQ</span><h2>Questions<em>,</em> answered</h2></div>
+      <div class="faq-wrap"><span></span>
       <div class="faq">
-        <details>
-          <summary>Who can learn more about Tau Chi?</summary>
-          <p>DePaul students interested in professional growth, leadership, service, and community are welcome to explore the chapter.</p>
-        </details>
-        <details>
-          <summary>How do I find current recruitment information?</summary>
-          <p>Visit the <a data-linktree>Tau Chi Linktree</a> for current interest forms, event updates, and chapter social accounts.</p>
-        </details>
-        <details>
-          <summary>Where can I learn about Alpha Kappa Psi’s mission and values?</summary>
-          <p>Visit the <a href="https://akpsi.org" target="_blank" rel="noopener">national Alpha Kappa Psi website</a> for the fraternity’s mission, vision, and core values.</p>
-        </details>
-      </div>
+        <details><summary>Who can learn more about Tau Chi?</summary><p>DePaul students interested in professional growth, leadership, service, and community are welcome to explore the chapter.</p></details>
+        <details><summary>How do I find recruitment info?</summary><p>Visit the <a data-linktree>Recruitment page</a> or follow our <a data-instagram target="_blank" rel="noopener">Instagram</a> for current interest forms and event updates.</p></details>
+        <details><summary>Where can I learn about AKΨ's mission?</summary><p>Visit the <a href="https://akpsi.org" target="_blank" rel="noopener">national Alpha Kappa Psi website</a> for the fraternity’s mission, vision, and core values.</p></details>
+      </div></div>
     </div>
   </section>
 
-  <!-- ===== FOOTER (same on every page) ===== -->
   <footer class="site-footer" id="contact">
-    <div class="container">
+    <div class="wrap">
       <div class="footer-grid">
         <div>
           <span class="brand-letters">ΑΚΨ</span>
@@ -237,16 +189,16 @@
           <a data-linktree>Recruitment</a>
           <a data-instagram target="_blank" rel="noopener">Instagram</a>
           <a data-linkedin target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://akpsi.org" target="_blank" rel="noopener">Alpha Kappa Psi International</a>
-          <a data-depaul-orgs target="_blank" rel="noopener">DePaul Student Organizations</a>
+          <a href="https://akpsi.org" target="_blank" rel="noopener">AKΨ International</a>
+          <a data-depaul-orgs target="_blank" rel="noopener">DePaul Student Orgs</a>
         </div>
       </div>
-      <div class="footer-bottom">© <span data-year></span> Alpha Kappa Psi · Tau Chi Chapter, DePaul University.</div>
+      <div class="footer-bottom"><span>© <span data-year></span> Alpha Kappa Psi · Tau Chi Chapter</span><span>Est. 1904</span></div>
     </div>
   </footer>
 
   <script src="data/site-data.js?v=5"></script>
   <script src="js/main.js?v=5"></script>
-  <script src="js/congrats.js?v=2"></script>
+  <script src="js/congrats.js?v=3"></script>
 </body>
 </html>

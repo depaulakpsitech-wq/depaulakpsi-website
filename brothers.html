@@ -17,105 +17,77 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="The Tau Chi Chapter of Alpha Kappa Psi at DePaul University">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#0b2545">
+  <meta name="theme-color" content="#061529">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32.png">
   <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
   <!-- /previews -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=16">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=17">
 </head>
 <body>
-
-  <!-- ===== HEADER (same on every page) ===== -->
   <header class="site-header">
-    <nav class="nav container" aria-label="Main">
-      <a class="brand" href="index.html">
-        <span class="brand-letters">ΑΚΨ</span>
-        <span class="brand-text">Alpha Kappa Psi <span class="brand-sep">|</span> Tau Chi</span>
-      </a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav wrap" aria-label="Main">
+      <a class="brand" href="index.html"><span class="brand-letters">ΑΚΨ</span><span class="brand-text">Tau Chi · DePaul</span></a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="brothers.html">Brotherhood</a></li>
         <li><a href="recruitment.html">Recruitment</a></li>
-        <li><a class="btn btn-gold" href="#contact">Contact</a></li>
+        <li><a class="btn-line" href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- ===== PAGE HERO ===== -->
   <section class="hero page-hero">
-    <div class="container">
-      <span class="eyebrow">Our brothers</span>
-      <h1>Meet the people behind the letters.</h1>
-      <p class="lead">Our executive board leads the chapter's professional, service and brotherhood programming.</p>
+    <div class="hero-mark" aria-hidden="true">Κ</div>
+    <div class="wrap">
+      <div class="hero-top"><span class="label"><span class="dot"></span>Our brothers</span><span class="label">Fall 2026</span></div>
+      <h1>
+        <span class="row">The people</span>
+        <span class="row"><em>behind the</em>letters</span>
+      </h1>
+      <div class="hero-foot"><p class="lead">Our executive board leads the chapter’s professional, service and brotherhood programming.</p></div>
     </div>
-    <div class="hero-mark" aria-hidden="true">ΑΚΨ</div>
+    <div class="hero-media"><img src="images/chapter/eboard.jpg" alt="The Fall 2026 Alpha Kappa Psi DePaul executive board"></div>
   </section>
 
-  <!-- ===== EXEC BOARD (filled in from data/site-data.js) ===== -->
   <section>
-    <div class="container">
-      <div class="split eboard-intro">
-        <div>
-          <span class="eyebrow">Leadership</span>
-          <h2>Fall 2026 executive board</h2>
-          <p class="muted">Eleven officers who run the chapter's professional development, recruitment, service and brotherhood programming.</p>
-        </div>
-        <div class="photo-frame">
-          <img src="images/chapter/eboard.jpg" alt="The Fall 2026 Alpha Kappa Psi DePaul executive board" onerror="this.remove()">
-        </div>
-      </div>
+    <div class="wrap">
+      <div class="sec-head section-head"><span class="label">01 — Leadership</span><h2>Executive <em>board</em></h2><p>Eleven officers who run the chapter. Click a portrait to open their LinkedIn.</p></div>
       <div id="exec-grid" class="exec-grid"></div>
     </div>
   </section>
 
-  <!-- ===== BROTHERHOOD PHOTO STRIP (photos listed in data/site-data.js) ===== -->
-  <section id="gallery-section" class="gallery-section">
-    <div class="container">
-      <div class="section-head" style="text-align:center;margin-inline:auto">
-        <span class="eyebrow">Brotherhood</span>
-        <h2>Life in Tau Chi</h2>
-        <p>Professional events, service days, socials and everything in between.</p>
-      </div>
-    </div>
+  <section id="gallery-section" class="rule">
+    <div class="wrap"><div class="sec-head section-head"><span class="label">02 — Brotherhood</span><h2>Life <em>in</em> Tau Chi</h2><p>Professional events, service days, socials and everything in between.</p></div></div>
     <div id="photo-strip" class="photo-strip"></div>
   </section>
 
-  <!-- ===== ALL BROTHERS (filled in from data/site-data.js) ===== -->
-  <section id="roster-section" class="section-alt">
-    <div class="container">
-      <div class="section-head" style="margin-bottom:.6rem">
-        <span class="eyebrow">The brotherhood</span>
-        <h2>Active brothers</h2>
-      </div>
+  <section id="roster-section" class="linen">
+    <div class="wrap">
+      <div class="sec-head section-head"><span class="label">03 — The brotherhood</span><h2>Active <em>brothers</em></h2></div>
       <p class="roster-count" id="roster-count"></p>
       <div id="roster"></div>
     </div>
   </section>
 
-  <!-- ===== GROUP PHOTO ===== -->
   <section>
-    <div class="container split">
+    <div class="wrap split">
       <div>
-        <span class="eyebrow">The chapter</span>
-        <h2>One brotherhood, every major.</h2>
-        <p>Our brothers come from across DePaul's colleges and bring different strengths to the table, which is exactly what makes the chapter work.</p>
-        <a class="btn btn-navy" href="recruitment.html">Interested in joining?</a>
+        <span class="label">04 — The chapter</span>
+        <h2>One brotherhood <em>every</em> major</h2>
+        <p>Our brothers come from across DePaul’s colleges and bring different strengths to the table, which is exactly what makes the chapter work.</p>
+        <p style="margin-top:32px"><a class="btn-line" href="recruitment.html">Interested in joining?</a></p>
       </div>
-      <div class="photo-frame wide">
-        <!-- Whole-chapter photo: images/chapter/chapter.jpg -->
-        <img src="images/chapter/chapter.jpg" alt="The full Alpha Kappa Psi DePaul chapter" onerror="this.remove()">
-      </div>
+      <div class="photo-frame"><img src="images/chapter/chapter.jpg" alt="The full Alpha Kappa Psi DePaul chapter" onerror="this.remove()"></div>
     </div>
   </section>
 
-  <!-- ===== FOOTER (same on every page) ===== -->
   <footer class="site-footer" id="contact">
-    <div class="container">
+    <div class="wrap">
       <div class="footer-grid">
         <div>
           <span class="brand-letters">ΑΚΨ</span>
@@ -125,11 +97,11 @@
           <a data-linktree>Recruitment</a>
           <a data-instagram target="_blank" rel="noopener">Instagram</a>
           <a data-linkedin target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://akpsi.org" target="_blank" rel="noopener">Alpha Kappa Psi International</a>
-          <a data-depaul-orgs target="_blank" rel="noopener">DePaul Student Organizations</a>
+          <a href="https://akpsi.org" target="_blank" rel="noopener">AKΨ International</a>
+          <a data-depaul-orgs target="_blank" rel="noopener">DePaul Student Orgs</a>
         </div>
       </div>
-      <div class="footer-bottom">© <span data-year></span> Alpha Kappa Psi · Tau Chi Chapter, DePaul University.</div>
+      <div class="footer-bottom"><span>© <span data-year></span> Alpha Kappa Psi · Tau Chi Chapter</span><span>Est. 1904</span></div>
     </div>
   </footer>
 

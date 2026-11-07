@@ -35,7 +35,8 @@ The stats on the home page (brothers, pledge classes, companies) are counted aut
 
 ## Text on the pages
 - Home page copy → `index.html`. FAQ → `index.html` and `recruitment.html`.
-- Colors and fonts → top of `css/style.css` (`--navy`, `--gold`).
+- Colors and fonts → top of `css/style.css` (`--navy`, `--navy-deep`, `--gold`, `--linen`). Fonts are Inter (headlines and body) and Playfair Display italic (the small gold words).
+- If you change `css/style.css`, bump the number in `css/style.css?v=…` in all four HTML files so browsers load the new version.
 
 Check Alpha Kappa Psi's national brand guidelines before using the crest or logo.
 
