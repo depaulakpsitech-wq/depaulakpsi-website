@@ -463,3 +463,109 @@ html:not(.intro-seen) .hero-home .hero-top, html:not(.intro-seen) .hero-home .he
 /* Longer logo lists: keep the scroll speed relaxed */
 .marquee.featured .marquee-track { animation-duration: 95s; }
 .marquee.reverse .marquee-track { animation-duration: 110s; }
+
+/* ---------- Logo strip: manual scrolling (arrows, swipe, trackpad) ---------- */
+.marquee {
+  overflow-x: auto; overflow-y: hidden; scrollbar-width: none; -ms-overflow-style: none;
+  overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; cursor: grab;
+}
+.marquee::-webkit-scrollbar { display: none; }
+.marquee:active { cursor: grabbing; }
+.marquee .marquee-track { animation: none !important; transform: none !important; width: max-content !important; }
+.marquee .marquee-set { flex-wrap: nowrap !important; }
+.marquee .marquee-set[aria-hidden="true"] { display: flex !important; }
+.logo-item img { -webkit-user-drag: none; user-select: none; pointer-events: none; }
+.marquee-controls { display: flex; justify-content: flex-end; gap: 10px; padding-top: 20px; }
+.mq-btn {
+  width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--line); background: transparent;
+  color: var(--bone); font-family: var(--sans); font-size: 18px; line-height: 1; cursor: pointer;
+  display: grid; place-items: center; transition: border-color .2s, background .2s, color .2s;
+}
+.mq-btn:hover { border-color: var(--gold); color: var(--gold); }
+.mq-btn:active { background: var(--gold); color: var(--navy-deep); }
+.mq-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+/* ---------- Phone layout ---------- */
+@media (max-width: 700px) {
+  section { padding-block: 60px; }
+  .sec-head { margin-bottom: 32px; gap: 12px; }
+  .sec-head p { margin-top: 4px; }
+
+  /* Hero */
+  .hero { padding-top: 28px; }
+  .hero-top { margin-bottom: 22px; }
+  .hero-foot { gap: 22px; margin-top: 26px; }
+  .hero-foot .actions, .cta .actions { flex-direction: column; align-items: stretch; gap: 6px; }
+  .hero-foot .actions .btn-line, .cta .actions .btn-line { justify-content: center; padding: 15px 20px; }
+  .hero-foot .actions .cta-link, .cta .actions .cta-link { justify-content: center; border-bottom: 0; padding: 12px 0; }
+  .hero-media { margin-top: 36px; }
+
+  /* Stats */
+  .stat-item { padding-block: 22px; }
+  .stat-item span { margin-top: 10px; }
+
+  /* About + quote */
+  .split { gap: 28px; }
+  .split h2 { margin: 12px 0 18px; }
+  .pull-quote { margin-top: 48px; padding-top: 24px; gap: 12px; }
+  .pull-quote blockquote { font-size: 28px; line-height: 1.12; }
+
+  /* Cards */
+  .cards { gap: 12px; }
+  .card { padding: 22px; }
+  .card .num { padding-bottom: 18px; }
+  .card h3 { font-size: 26px; margin-bottom: 10px; }
+
+  /* Values */
+  .value { padding: 20px 0; gap: 6px; }
+
+  /* Chapter life */
+  .life-grid { gap: 6px; }
+  .life-grid figcaption { padding: 36px 14px 12px; font-size: 10px; }
+  .life-more { margin-top: 24px; }
+
+  /* Logo strip */
+  .marquee .marquee-set span.logo-item { padding: 20px 0; margin: 0 22px; }
+  .marquee-controls { padding: 16px var(--pad) 0; }
+
+  /* CTA */
+  .cta-box { padding: 30px 22px; border-radius: 12px; }
+  .cta h2 { margin: 16px 0 20px; }
+  .cta p { margin-bottom: 22px; }
+  .cta .fine-print { margin-top: 18px; }
+
+  /* FAQ */
+  .faq summary { font-size: 20px; padding: 20px 40px 20px 0; }
+  .faq details p { padding-bottom: 20px; }
+
+  /* Brotherhood */
+  .exec-grid { gap: 22px 12px; }
+  .member h3 { font-size: 18px; }
+  .member-role { font-size: 10px; letter-spacing: .1em; }
+  .roster-count { margin: -12px 0 28px; }
+  .pledge-class { padding: 22px 0; }
+  .brother { font-size: 19px; }
+  .photo-set figure { height: 220px; }
+
+  /* Recruitment */
+  .notice { padding: 22px; }
+  .notice strong { font-size: 24px; }
+  .event { grid-template-columns: 1fr; gap: 6px; padding: 20px 0; }
+  .event-date, .event h3 { font-size: 24px; }
+
+  /* Events page */
+  .event-head { gap: 10px; margin-bottom: 20px; }
+
+  /* Footer */
+  .site-footer { padding-top: 48px; }
+  .footer-grid { gap: 28px; }
+  .footer-links a { font-size: 20px; }
+  .footer-bottom { margin-top: 36px; }
+
+  /* Pop-up */
+  .congrats-body { padding: 20px 20px 24px; }
+}
+@media (max-width: 700px) {
+  #placements-section { padding-bottom: 28px; }
+  #placements-section + .cta { padding-top: 28px; }
+}
