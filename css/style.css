@@ -460,3 +460,6 @@ html:not(.intro-seen) .hero-home .hero-top, html:not(.intro-seen) .hero-home .he
   .logo-item img { height: 26px; max-width: 140px; }
   .marquee.featured .logo-item img { height: 38px; max-width: 180px; }
 }
+/* Longer logo lists: keep the scroll speed relaxed */
+.marquee.featured .marquee-track { animation-duration: 95s; }
+.marquee.reverse .marquee-track { animation-duration: 110s; }
