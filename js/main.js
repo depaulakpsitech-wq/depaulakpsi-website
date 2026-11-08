@@ -179,7 +179,8 @@
   /* ---------- Where our brothers have worked ---------- */
   const pl = document.getElementById("placements");
   if (pl) {
-    const all = S.placements || [];
+    // Only companies with a logo file are shown (logos live in images/logos/)
+    const all = (S.placements || []).filter((c) => c.logo);
     const section = document.getElementById("placements-section");
     if (!all.length || !S.showPlacements) { if (section) section.hidden = true; }
     else {
@@ -187,7 +188,7 @@
       // Each row is a marquee: the list is repeated twice so the loop is seamless.
       const row = (list, cls) => {
         if (!list.length) return "";
-        const items = list.map((c) => `<span>${esc(c.name)}</span>`).join("");
+        const items = list.map((c) => `<span class="logo-item"><img src="images/logos/${encodeURI(c.logo)}" alt="${esc(c.name)}" title="${esc(c.name)}" loading="lazy"></span>`).join("");
         return `<div class="marquee ${cls}"><div class="marquee-track">
                   <div class="marquee-set">${items}</div>
                   <div class="marquee-set" aria-hidden="true">${items}</div>
@@ -216,7 +217,7 @@
   const statVals = {
     brothers: (S.execBoard || []).length + (S.brothers || []).length,
     classes: new Set((S.brothers || []).map((b) => b.pledgeClass).filter((c) => c && c !== "Transfer")).size,
-    companies: (S.placements || []).length,
+    companies: (S.placements || []).filter((c) => c.logo).length,
   };
   const countUp = (el) => {
     const key = el.dataset.count, suffix = el.dataset.suffix || "";
