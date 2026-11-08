@@ -569,3 +569,12 @@ html:not(.intro-seen) .hero-home .hero-top, html:not(.intro-seen) .hero-home .he
   #placements-section { padding-bottom: 28px; }
   #placements-section + .cta { padding-top: 28px; }
 }
+
+/* Beta Gamma pop-up: centered layout, headline sized to fit */
+.congrats-body { text-align: center; }
+.congrats-body h2 { font-size: clamp(26px, 7.8vw, 56px); }
+.congrats-body .congrats-ok { justify-content: center; }
+.congrats-body p { margin-left: auto; margin-right: auto; max-width: 460px; }
+@media (max-width: 700px) {
+  .congrats-body .congrats-ok { width: 100%; padding: 15px 20px; }
+}
