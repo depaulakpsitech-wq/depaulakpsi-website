@@ -194,8 +194,69 @@
                   <div class="marquee-set" aria-hidden="true">${items}</div>
                 </div></div>`;
       };
-      pl.innerHTML = row(feat, "featured") + row(rest, "reverse");
+      pl.innerHTML = row(feat, "featured") + row(rest, "reverse") +
+        `<div class="marquee-controls wrap">
+           <button type="button" class="mq-btn" data-dir="-1" aria-label="Scroll companies back">&larr;</button>
+           <button type="button" class="mq-btn" data-dir="1" aria-label="Scroll companies forward">&rarr;</button>
+         </div>`;
+      initLogoStrip(pl);
     }
+  }
+
+  /* Logo strip: drifts on its own, and can be moved with the arrows, by swiping, or with a trackpad.
+     Each row holds its list twice; the scroll position wraps so the loop never ends. */
+  function initLogoStrip(root) {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const rows = [...root.querySelectorAll(".marquee")].map((el, i) => ({
+      el, dir: el.classList.contains("reverse") ? -1 : 1, speed: i === 0 ? 0.5 : 0.4, pos: 0, half: 0, tween: null
+    }));
+    let holdUntil = 0, hovering = false;
+    const measure = (r) => { const set = r.el.querySelector(".marquee-set"); r.half = set ? set.offsetWidth : 0; };
+    const wrap = (r) => { if (!r.half) return; while (r.pos >= r.half) r.pos -= r.half; while (r.pos < 0) r.pos += r.half; };
+    const apply = (r) => { wrap(r); r.el.scrollLeft = r.pos; };
+    rows.forEach((r) => { measure(r); r.pos = r.dir < 0 ? r.half * 0.5 : 0; apply(r); });
+    addEventListener("load", () => rows.forEach((r) => { measure(r); apply(r); }));
+    addEventListener("resize", () => rows.forEach(measure));
+
+    const hold = (ms) => { holdUntil = Math.max(holdUntil, performance.now() + ms); };
+    rows.forEach((r) => {
+      const el = r.el;
+      ["pointerdown", "touchstart", "wheel"].forEach((ev) => el.addEventListener(ev, () => { r.tween = null; hold(2500); }, { passive: true }));
+      el.addEventListener("scroll", () => {
+        if (performance.now() < holdUntil && !r.tween) {
+          r.pos = el.scrollLeft;
+          if (r.half && (r.pos >= r.half || r.pos <= 1)) apply(r);
+        }
+      }, { passive: true });
+    });
+    root.addEventListener("mouseenter", () => { hovering = true; });
+    root.addEventListener("mouseleave", () => { hovering = false; });
+
+    root.querySelectorAll(".mq-btn").forEach((btn) => btn.addEventListener("click", () => {
+      const d = Number(btn.dataset.dir);
+      hold(3500);
+      rows.forEach((r) => {
+        const dist = r.el.clientWidth * 0.75 * d;
+        r.tween = { from: r.pos, to: r.pos + dist, start: performance.now(), dur: 550 };
+      });
+    }));
+
+    const ease = (t) => 1 - Math.pow(1 - t, 3);
+    function frame(now) {
+      rows.forEach((r) => {
+        if (r.tween) {
+          const t = Math.min(1, (now - r.tween.start) / r.tween.dur);
+          r.pos = r.tween.from + (r.tween.to - r.tween.from) * ease(t);
+          apply(r);
+          if (t >= 1) r.tween = null;
+        } else if (!reduce && !hovering && now >= holdUntil && r.half) {
+          r.pos += r.speed * r.dir;
+          apply(r);
+        }
+      });
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
   }
 
   /* ---------- Brotherhood photo strip ---------- */
