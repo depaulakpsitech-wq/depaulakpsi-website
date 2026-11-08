@@ -188,7 +188,7 @@
       // Each row is a marquee: the list is repeated twice so the loop is seamless.
       const row = (list, cls) => {
         if (!list.length) return "";
-        const items = list.map((c) => `<span class="logo-item"><img src="images/logos/${encodeURI(c.logo)}" alt="${esc(c.name)}" title="${esc(c.name)}" loading="lazy"></span>`).join("");
+        const items = list.map((c) => `<span class="logo-item"><img src="images/logos/${encodeURI(c.logo)}" alt="${esc(c.name)}" title="${esc(c.name)}" decoding="async"></span>`).join("");
         return `<div class="marquee ${cls}"><div class="marquee-track">
                   <div class="marquee-set">${items}</div>
                   <div class="marquee-set" aria-hidden="true">${items}</div>
@@ -207,30 +207,45 @@
      Each row holds its list twice; the scroll position wraps so the loop never ends. */
   function initLogoStrip(root) {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
     const rows = [...root.querySelectorAll(".marquee")].map((el, i) => ({
-      el, dir: el.classList.contains("reverse") ? -1 : 1, speed: i === 0 ? 0.5 : 0.4, pos: 0, half: 0, tween: null
+      el, dir: el.classList.contains("reverse") ? -1 : 1, speed: i === 0 ? 0.5 : 0.4,
+      pos: 0, half: 0, tween: null, last: -1, touching: false
     }));
     let holdUntil = 0, hovering = false;
-    const measure = (r) => { const set = r.el.querySelector(".marquee-set"); r.half = set ? set.offsetWidth : 0; };
-    const wrap = (r) => { if (!r.half) return; while (r.pos >= r.half) r.pos -= r.half; while (r.pos < 0) r.pos += r.half; };
-    const apply = (r) => { wrap(r); r.el.scrollLeft = r.pos; };
-    rows.forEach((r) => { measure(r); r.pos = r.dir < 0 ? r.half * 0.5 : 0; apply(r); });
-    addEventListener("load", () => rows.forEach((r) => { measure(r); apply(r); }));
-    addEventListener("resize", () => rows.forEach(measure));
-
     const hold = (ms) => { holdUntil = Math.max(holdUntil, performance.now() + ms); };
+    const measure = (r) => { const set = r.el.querySelector(".marquee-set"); r.half = set ? set.offsetWidth : 0; };
+    const wrapPos = (r) => { if (!r.half) return; while (r.pos >= r.half) r.pos -= r.half; while (r.pos < 0) r.pos += r.half; };
+    const write = (r) => { wrapPos(r); r.el.scrollLeft = r.pos; r.last = r.el.scrollLeft; };
+    rows.forEach((r) => { measure(r); r.pos = r.dir < 0 ? r.half * 0.5 : 0; write(r); });
+    addEventListener("load", () => rows.forEach((r) => { measure(r); write(r); }));
+    addEventListener("resize", () => rows.forEach((r) => { measure(r); write(r); }));
+    // Re-measure as logos finish loading, so the loop point is always exact
+    if ("ResizeObserver" in window) {
+      rows.forEach((r) => { const set = r.el.querySelector(".marquee-set"); if (set) new ResizeObserver(() => { const old = r.half; measure(r); if (old && r.half && r.dir < 0 && r.pos < 1) r.pos = r.half * 0.5; }).observe(set); });
+    }
+
     rows.forEach((r) => {
       const el = r.el;
-      ["pointerdown", "touchstart", "wheel"].forEach((ev) => el.addEventListener(ev, () => { r.tween = null; hold(2500); }, { passive: true }));
+      // Finger or mouse on the strip: stop drifting so the person is in control
+      el.addEventListener("touchstart", () => { r.touching = true; r.tween = null; hold(3000); }, { passive: true });
+      el.addEventListener("touchend", () => { r.touching = false; hold(2500); }, { passive: true });
+      el.addEventListener("touchcancel", () => { r.touching = false; hold(2500); }, { passive: true });
+      el.addEventListener("pointerdown", () => { r.tween = null; hold(2500); }, { passive: true });
+      el.addEventListener("wheel", () => { r.tween = null; hold(2500); }, { passive: true });
+      // Any scroll we didn't cause (swipe, momentum, trackpad) keeps the pause going and syncs our position
       el.addEventListener("scroll", () => {
-        if (performance.now() < holdUntil && !r.tween) {
-          r.pos = el.scrollLeft;
-          if (r.half && (r.pos >= r.half || r.pos <= 1)) apply(r);
+        if (Math.abs(el.scrollLeft - r.last) > 2) {
+          r.pos = el.scrollLeft; r.last = el.scrollLeft; r.tween = null; hold(2000);
+          // Keep the loop endless while swiping (only when not mid-gesture, so momentum isn't cut off)
+          if (!r.touching && r.half && (r.pos >= r.half * 1.5 || r.pos <= r.half * 0.1)) { write(r); }
         }
       }, { passive: true });
     });
-    root.addEventListener("mouseenter", () => { hovering = true; });
-    root.addEventListener("mouseleave", () => { hovering = false; });
+    if (canHover) {
+      root.addEventListener("mouseenter", () => { hovering = true; });
+      root.addEventListener("mouseleave", () => { hovering = false; });
+    }
 
     root.querySelectorAll(".mq-btn").forEach((btn) => btn.addEventListener("click", () => {
       const d = Number(btn.dataset.dir);
@@ -247,11 +262,11 @@
         if (r.tween) {
           const t = Math.min(1, (now - r.tween.start) / r.tween.dur);
           r.pos = r.tween.from + (r.tween.to - r.tween.from) * ease(t);
-          apply(r);
+          write(r);
           if (t >= 1) r.tween = null;
-        } else if (!reduce && !hovering && now >= holdUntil && r.half) {
+        } else if (!reduce && !hovering && !r.touching && now >= holdUntil && r.half) {
           r.pos += r.speed * r.dir;
-          apply(r);
+          write(r);
         }
       });
       requestAnimationFrame(frame);
