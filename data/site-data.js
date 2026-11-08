@@ -135,27 +135,48 @@ window.SITE = {
   placements: [
     // Shown as logos on the home page. Add a company: put its logo (transparent PNG or SVG)
     // in images/logos/, then add a line here with the file name. Entries without a logo are hidden.
+    // Top row (featured: true) = large, well-known firms.
     { name: "AbbVie", logo: "abbvie.svg", featured: true },
     { name: "KPMG", logo: "kpmg.svg", featured: true },
+    { name: "PwC", logo: "pwc.svg", featured: true },
+    { name: "Accenture", logo: "accenture.svg", featured: true },
+    { name: "JPMorganChase", logo: "jpmorganchase.svg", featured: true },
+    { name: "Citi", logo: "citi.svg", featured: true },
+    { name: "BMO", logo: "bmo.svg", featured: true },
     { name: "RSM", logo: "rsm.png", featured: true },
     { name: "Aon", logo: "aon.svg", featured: true },
     { name: "Merck", logo: "merck.svg", featured: true },
+    { name: "Crowe", logo: "crowe.svg", featured: true },
+    { name: "Protiviti", logo: "protiviti.svg", featured: true },
+    { name: "Lockton", logo: "lockton.svg", featured: true },
     { name: "ENGIE", logo: "engie.svg", featured: true },
-    { name: "Harris | Oakmark", logo: "harris-oakmark.svg", featured: true },
-    { name: "Citi", logo: "citi.svg", featured: true },
-    { name: "BMO", logo: "bmo.svg", featured: true },
     { name: "Grainger", logo: "grainger.png", featured: true },
+    { name: "McGraw Hill", logo: "mcgraw-hill.svg", featured: true },
+    { name: "Harris | Oakmark", logo: "harris-oakmark.svg", featured: true },
+    // Second row
+    { name: "Gallagher Bassett", logo: "gallagher-bassett.png" },
+    { name: "Paylocity", logo: "paylocity.svg" },
+    { name: "Apogem Capital", logo: "apogem.png" },
+    { name: "Cyprium Partners", logo: "cyprium.png" },
+    { name: "Shorehill Capital", logo: "shorehill.png" },
+    { name: "XMS Capital Partners", logo: "xms-capital.png" },
+    { name: "Stream Realty Partners", logo: "stream-realty.svg" },
+    { name: "Redbridge", logo: "redbridge.svg" },
     { name: "Mohawk Global", logo: "mohawk-global.svg" },
     { name: "First Eagle Bank", logo: "first-eagle-bank.svg" },
     { name: "AHIMA", logo: "ahima.png" },
     { name: "Lockstep", logo: "lockstep.png" },
+    { name: "RE/MAX", logo: "remax.png" },
     { name: "Westmere Financial", logo: "westmere-financial.png" },
     { name: "Blaige & Company", logo: "blaige.png" },
+    { name: "Project Destined", logo: "project-destined.png" },
+    { name: "Ladder Up", logo: "ladder-up.svg" },
     { name: "Archer", logo: "archer.png" },
+    { name: "Fresh Prints", logo: "fresh-prints.svg" },
+    { name: "Sennco", logo: "sennco.png" },
     { name: "Parkway Communities", logo: "parkway-communities.png" },
     { name: "HelloCollege", logo: "hellocollege.webp" },
-    { name: "Caliwater", logo: "caliwater.png" },
-    { name: "Project Destined", logo: "project-destined.png" }
+    { name: "Caliwater", logo: "caliwater.png" }
   ],
 
   /* ---------- Events (Events page) ----------
